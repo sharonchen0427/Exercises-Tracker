@@ -1,5 +1,4 @@
 import os
-
 import requests
 from datetime import datetime
 
@@ -35,9 +34,8 @@ result = resp.json()
 # use sheety api to generate a new row of data in google sheet
 GMAIL_USER = "jennieabout591@gmail.com"
 GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/1cA55gntAdJIqRZz750KN3XQy4mjKfsph4b4vl3YWbjA/edit#gid=0"
-SHEETY_URL = "https://api.sheety.co/2e06395c013d40e08e67a5458fcea8ff/workoutTracking/sheet1"
-# SHEETY_URL = f"https://api.sheety.co/{SHEETY_API_KEY}/workoutTracking/sheet1"
-# SHEETY_API_KEY = "2e06395c013d40e08e67a5458fcea8ff"
+SHEETY_API_KEY = os.environ['SHEETY_API_KEY']
+SHEETY_URL = f"https://api.sheety.co/{SHEETY_API_KEY}/workoutTracking/sheet1"
 shetty_bearer_token = os.environ['shetty_bearer_token']
 bear_headers = {
     "Authorization": f'Bearer {shetty_bearer_token}'
